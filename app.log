@@ -1,0 +1,5 @@
+2026-09-29 15:57:59,027 - DEBUG - Checking the rida input...
+2026-09-29 15:57:59,027 - INFO - rida logged in successfully.
+2026-09-29 15:57:59,027 - WARNING - rida has only 2 login attempts remaining.
+2026-09-29 15:57:59,028 - ERROR - Could not connect to database
+2026-09-29 15:57:59,028 - CRITICAL - Database server is down
