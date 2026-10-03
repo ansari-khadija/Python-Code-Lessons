@@ -1,11 +1,24 @@
-import re
+# Multi-threading
 
-# Define a string
-text = "The quick brown fox jumps over the lazy dog."
+import threading
+import time
 
-# Use regex to find and replace the word 'fox' with 'cat'
-new_text = re.sub('fox', 'cat', text)
+num=int(input("Enter a number: "))
 
-# Print the original and new strings
-print("Original text:", text)
-print("New text:", new_text)
+def square(num):
+    print(f"Square: {num*num}")
+    time.sleep(1)
+
+def cube(num):
+    print(f"Cube: {num*num*num}")
+    time.sleep(1)
+
+t1 = threading.Thread(target=square, args=(4,))
+t2 = threading.Thread(target=cube, args=(4,))
+
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+
+print("Done!")
