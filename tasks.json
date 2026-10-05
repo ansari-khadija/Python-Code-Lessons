@@ -1,1 +1,10 @@
-[]
+[
+    {
+        "text": "code",
+        "completed": true
+    },
+    {
+        "text": "files",
+        "completed": true
+    }
+]
