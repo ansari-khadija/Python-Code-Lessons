@@ -1,75 +1,27 @@
-# Method Overriding part_1
 
-class Animal:
-    def sound(self):
-        print("Animal sound")
+name= input("Enter student name: ")
+marks= int(input("Enter student marks: "))
 
-class Dog(Animal):
-    def sound(self):
-        print("Bark")
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
 
-Dog().sound()  # Bark
+    def display(self):
+        print("Grade:", self.calculate_grade())
 
-
-# Constructor Inheritance and Overriding part_2
-
-class Parent:
-    def __init__(self):
-        print("Parent constructor")
-
-class Child(Parent):
-    pass
-
-Child()
-
-
-# super() Function part_3
-
-class Parent:
-    def greet(self):
-        print("Hello from Parent")
-
-class Child(Parent):
-    def greet(self):
-        super().greet()
-        print("Hello from Child")
-
-Child().greet()
+    def calculate_grade(self):
+        if self.marks >= 90:
+            return "A"
+        elif self.marks >= 75:
+            return "B"
+        elif self.marks >= 60:
+            return "C"
+        elif self.marks >= 35:
+            return "D"
+        else:
+            return "Fail"
 
 
-# Method Resolution Order (MRO) part_4
-
-
-class A:
-    def show(self):
-        print("A")
-
-class B(A):
-    def show(self):
-        print("B")
-
-class C(B):
-    pass
-
-print(C.mro())
-C().show()  # B
-
-
-# Diamond Problem part_5
-
-
-class A:
-    def show(self):
-        print("A")
-
-class B(A):
-    pass
-
-class C(A):
-    pass
-
-class D(B, C):
-    pass
-
-D().show()
-print(D.mro())
+s1 = Student(name, marks)
+s1.display()
